@@ -1,0 +1,33 @@
+{
+  "name": "thekeep",
+  "version": "1.0.0",
+  "description": "Isometric, turn-based survival",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build:production": "webpack --env.production",
+    "clean": "rimraf dist/*.js",
+    "watch": "webpack --watch",
+    "serve": "webpack-dev-server --hot"
+  },
+  "keywords": [
+    "phaser",
+    "webpack",
+    "es6"
+  ],
+  "author": "Jacob Busfield",
+  "license": "MIT",
+  "dependencies": {
+    "phaser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "babel-loader": "^8.0.2",
+    "@babel/preset-env": "^7.1.0",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9"
+  }
+}

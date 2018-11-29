@@ -1,0 +1,24 @@
+lighting:
+objects can inherit lighting that specifies how bright something is and whether it flickers.
+
+upgrade:
+only one concept of upgrade. units specialise once when doing one thing for a long time.
+so practising fighting gives you a shield so you block all weak attacks, and deflect some major blows.
+farming gives you a pitchfork and a hat and improves farming speed.
+
+context actions:
+i want it so - turn based - but if you're chopping wood itll just do this - until something arises that needs your attention.
+So a bear appears - its a - does he run, dodge, shout, draw sword etc.
+when everyone is just chopping wood (ie no idle people, or people requesting help), moves just have a timer running down with pause/ continue option.
+
+gameplay:
+its important for creative descisions - the best approach with the tech available is map altering actions.
+this needs fleshing out, but obvious things like walls etc
+but absolutely needs turn-based big map changes to keep things feeling dynamic.
+ - so mass flooding - maybe you cause this.
+ - set forests on fire to flush out enemies (but this might deplete your wood stock etc)
+
+
+levels:
+people will play for about 5 mins.
+have non-synchronous levels (all unlocked) so scenarios of different difficulties that last about this length.
