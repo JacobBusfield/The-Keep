@@ -4,20 +4,15 @@ export default class Wall extends Tile {
     constructor(scene, x, y, isWallNE = false, isWallSE = false, isWallSW = false, isWallNW = false) {
         super(scene, x, y, 'tile_wall_O', 0)
         this.updateNeighbours()
-        // console.log("this.isWallNE", this.isWallNE)
     }
 
-    create() {
-        console.log('Created wall')
-    }
+    create() {}
 
     update(){
         super.update()
-        // this.x += 1
     }
 
     worldChange(neighbours){
-        console.log(neighbours)
         this.updateNeighbours(
             neighbours.NE instanceof Wall,
             neighbours.SE instanceof Wall,
@@ -31,11 +26,6 @@ export default class Wall extends Tile {
         this.isWallSE = isWallSE
         this.isWallSW = isWallSW
         this.isWallNW = isWallNW
-
-        console.log("isWallNE", isWallNE)
-        console.log("isWallSE", isWallSE)
-        console.log("isWallSW", isWallSW)
-        console.log("isWallNW", isWallNW)
 
         if (!isWallNE && isWallSE && !isWallSW && isWallNW){
             super.setTexture('tile_wall_A');

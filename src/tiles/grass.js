@@ -5,12 +5,9 @@ export default class Grass extends Tile {
         super(scene, x, y, 'tile_grass', 0)
     }
 
-    create() {
-        console.log('Created grass')
-    }
+    create() {}
 
     update(){
         super.update()
-        // this.x += 1
     }
 }

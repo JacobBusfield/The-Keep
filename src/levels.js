@@ -8,8 +8,6 @@ export default class Levels {
 
     get(no){
         let tiles = []
-        console.log("no")
-        console.log(no)
         switch(no){
             case 1:
                 tiles = [

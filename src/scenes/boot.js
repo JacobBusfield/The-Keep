@@ -8,7 +8,6 @@ export default class Boot extends Scene {
     preload() {}
 
     create() {
-        console.log('boot started')
         this.scene.start('preload')
     }
 }

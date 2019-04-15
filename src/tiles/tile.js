@@ -5,14 +5,9 @@ export default class Tile extends GameObjects.Sprite {
         super(scene, x, y, texture, frame)
     }
 
-    create() {
-        console.log('Created tile')
-    }
+    create(){}
 
-    update(){
-        
-        // todo.
-    }
+    update(){}
 
     worldChange(neighbours){
         // lets state of a tile update using global tiles

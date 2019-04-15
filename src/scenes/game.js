@@ -10,10 +10,6 @@ export default class Game extends Scene {
     preload() {}
 
     create() {
-        console.log("this")
-        console.log(this)
-
-        console.log('game started')
 
         // let config = {
         //     key: 'engineer_walk_down',
