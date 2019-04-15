@@ -29,12 +29,12 @@ export default class Levels {
                 break;
             default:
                 tiles = [
-                    [Grass, Grass, Grass, Grass, Grass, Grass, Grass],
-                    [Grass, Grass, Grass, Grass, Grass, Wall, Grass],
-                    [Grass, Grass, Grass, Grass, Grass, Wall, Grass],
-                    [Grass, Grass, Grass, Grass, Grass, Wall, Grass],
-                    [Grass, Grass, Grass, Grass, Grass, Wall, Grass],
-                    [Grass, Grass, Grass, Grass, Grass, Wall, Grass],
+                    [Grass, Grass, Grass, Wall, Grass, Grass, Grass],
+                    [Grass, Wall, Wall, Wall, Wall, Wall, Grass],
+                    [Grass, Wall, Grass, Wall, Grass, Wall, Grass],
+                    [Grass, Wall, Grass, Grass, Grass, Wall, Grass],
+                    [Grass, Wall, Grass, Grass, Grass, Wall, Grass],
+                    [Grass, Wall, Wall, Wall, Wall, Wall, Grass],
                     [Grass, Grass, Grass, Grass, Grass, Grass, Grass],
                 ]
         }

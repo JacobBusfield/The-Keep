@@ -8,6 +8,7 @@ export default class Tiles extends GameObjects.Group {
         this.scene = scene // TODO: DO I NEED TO SAVE THIS SCENE? Can i grab it from the group?
         this.levels = new Levels()
         this.tileWidth = 65
+        this.rowLength = 0
     }
 
     update(){
@@ -18,6 +19,7 @@ export default class Tiles extends GameObjects.Group {
     
     init(level){
         let tiles = this.levels.get(level)
+        this.rowLength = tiles[0].length
         let startX = this.scene.game.canvas.width / 2
         let startY = (this.scene.game.canvas.height / 2) - ((this.tileWidth/2)*(Math.log(tiles.length) / Math.log(2)))
         for (let i = 0; i < tiles.length; i++){
@@ -32,6 +34,24 @@ export default class Tiles extends GameObjects.Group {
             }
             startX += this.tileWidth*0.5
             startY += this.tileWidth*0.29 // number is from ratio of tile face height to image height
+        }
+
+        this.updateWorld()
+    }
+
+    // Go thru' tiles and update their appearance based on other tiles.
+    updateWorld(){
+        for (let i in this.children.entries){
+            this.children.entries[i].worldChange(this.getNeighbourIndexes(parseInt(i)))
+        }
+    }
+
+    getNeighbourIndexes(index){
+        return { 
+            'NE': (index % this.rowLength !== this.children.entries.length - 1) ? this.children.entries[(index - 1)] : null,
+            'SW': (index % this.rowLength !== 0) ? this.children.entries[(index + 1)] : null,
+            'SE': ((index + this.rowLength) <= this.children.entries.length) ? this.children.entries[(index + this.rowLength)] : null,
+            'NW': ((index - this.rowLength) >= 0) ? this.children.entries[(index - this.rowLength)] : null
         }
     }
 }

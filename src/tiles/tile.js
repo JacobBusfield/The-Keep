@@ -13,4 +13,8 @@ export default class Tile extends GameObjects.Sprite {
         
         // todo.
     }
+
+    worldChange(neighbours){
+        // lets state of a tile update using global tiles
+    }
 }
