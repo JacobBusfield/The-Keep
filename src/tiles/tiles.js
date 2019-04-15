@@ -21,7 +21,7 @@ export default class Tiles extends GameObjects.Group {
         let tiles = this.levels.get(level)
         this.rowLength = tiles[0].length
         let startX = this.scene.game.canvas.width / 2
-        let startY = (this.scene.game.canvas.height / 2) - ((this.tileWidth/2)*(Math.log(tiles.length) / Math.log(2)))
+        let startY = (this.scene.game.canvas.height*0.5) - ((this.tileWidth/4)*this.rowLength)
         for (let i = 0; i < tiles.length; i++){
             let tileX = startX
             let tileY = startY
