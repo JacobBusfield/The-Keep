@@ -10,6 +10,7 @@ export default class Tile extends GameObjects.Sprite {
     }
 
     update(){
+        
         // todo.
     }
 }

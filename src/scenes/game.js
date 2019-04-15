@@ -31,12 +31,9 @@ export default class Game extends Scene {
         // person.anims.play('engineer_walk_down')
 
         this.tiles = new Tiles(this)
-        this.tiles.init(0)
+        this.tiles.init(3)
         console.log("tiles")
         console.log(this.tiles)
-        // tiles.
-        // this.add.existing(tiles)
-        // tiles.create(this)
     }
 
     update(delta){
