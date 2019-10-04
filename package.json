@@ -18,7 +18,7 @@
   "author": "Jacob Busfield",
   "license": "MIT",
   "dependencies": {
-    "phaser": "^3.13.0"
+    "phaser": "^3.17.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
