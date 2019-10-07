@@ -6,7 +6,6 @@
   "scripts": {
     "build": "webpack",
     "build:production": "webpack --env.production",
-    "clean": "rimraf dist/*.js",
     "watch": "webpack --watch",
     "serve": "webpack-dev-server --hot"
   },

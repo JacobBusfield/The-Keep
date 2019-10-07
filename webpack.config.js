@@ -9,13 +9,12 @@ module.exports = env => {
         },
         output: {
             filename: '[name].bundle.js',
-            path: path.join(__dirname, 'dist'),
+            path: path.join(__dirname),
             publicPath: "/"
         },
         mode: env && env.production ? 'production' : 'development',
         module: {
-            rules: [
-                {
+            rules: [{
                     test: /\.js$/,
                     exclude: /node_modules/,
                     use: {
@@ -32,7 +31,7 @@ module.exports = env => {
             ]
         },
         devServer: {
-            contentBase: './dist'
+            contentBase: './'
         },
         plugins: [
             new webpack.DefinePlugin({
@@ -53,7 +52,6 @@ module.exports = env => {
                     }
                 }
             }
-          }
+        }
     }
 }
-
