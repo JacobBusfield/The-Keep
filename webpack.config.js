@@ -25,6 +25,12 @@ module.exports = env => {
                     }
                 },
                 {
+                    test: /\.(png|svg|jpg|gif)$/,
+                    use: [
+                        'file-loader',
+                    ],
+                },
+                {
                     test: [/\.vert$/, /\.frag$/],
                     use: 'raw-loader'
                 }
