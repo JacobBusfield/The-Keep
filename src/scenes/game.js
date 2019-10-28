@@ -1,4 +1,6 @@
-import { Scene } from 'phaser'
+import {
+    Scene
+} from 'phaser'
 import Person from '../objects/person'
 import Tiles from '../tiles/tiles'
 
@@ -32,7 +34,7 @@ export default class Game extends Scene {
         console.log(this.tiles)
     }
 
-    update(delta){
+    update(delta) {
         this.tiles.update()
     }
 }
