@@ -9,13 +9,12 @@ module.exports = env => {
         },
         output: {
             filename: "[name].bundle.js",
-            path: path.join(__dirname),
-            publicPath: "./" //TODO: move this to ./images/ add change where images are packed to.
+            path: path.join(__dirname, 'dist'),
+            // publicPath: path.join(__dirname, 'dist') //TODO: move this to ./images/ add change where images are packed to.
         },
         mode: env && env.production ? "production" : "development",
         module: {
-            rules: [
-                {
+            rules: [{
                     test: /\.js$/,
                     exclude: /node_modules/,
                     use: {
