@@ -1,7 +1,9 @@
 import {
     Scene
 } from 'phaser'
-import Person from '../objects/person'
+import {
+    TextButton
+} from '../ui/button'
 import Tiles from '../tiles/tiles'
 
 export default class Game extends Scene {
@@ -12,26 +14,19 @@ export default class Game extends Scene {
     preload() {}
 
     create() {
-
-        // let config = {
-        //     key: 'engineer_walk_down',
-        //     frames: this.anims.generateFrameNumbers('engineer', {
-        //         start: 0,
-        //         end: 3
-        //     }),
-        //     repeat: -1,
-        //     frameRate: 5
-        // }
-
-        // this.anims.create(config)
-        // let person = new Person(this, 100, 100, 'engineer', 0)
-        // this.add.existing(person)
-        // person.anims.play('engineer_walk_down')
+        this.back_button = new TextButton(
+            this,
+            100,
+            200,
+            'Back', {
+                font: "bold 32px Arial",
+                fill: '#0f0'
+            },
+            () => this.scene.start('title')
+        );
 
         this.tiles = new Tiles(this)
         this.tiles.init(3)
-        console.log("tiles")
-        console.log(this.tiles)
     }
 
     update(delta) {
