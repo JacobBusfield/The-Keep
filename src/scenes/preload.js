@@ -10,6 +10,7 @@ export default class Preload extends Scene {
     preload() {
         // this.load.spritesheet('engineer', require('../assets/Engineer.png'), { frameWidth: 32, frameHeight: 32, endFrame: 16 });
         this.load.image('tile_grass', require('../assets/tiles/grass.png'));
+        this.load.image('tile_water', require('../assets/tiles/water.png'));
         this.load.image('tile_tree', require('../assets/tiles/tree.png'));
         this.load.image('tile_wall_A', require('../assets/tiles/wall_A.png'));
         this.load.image('tile_wall_B', require('../assets/tiles/wall_B.png'));
