@@ -1,5 +1,6 @@
 import Grass from './tiles/grass'
 import Water from './tiles/water'
+import Beach from './tiles/beach'
 import Tree from './tiles/tree'
 import Wall from './tiles/wall'
 
@@ -62,11 +63,20 @@ export default class Levels {
         while (col_count < 20) {
             let row = []
             while (row_count < 20) {
-                if ((col_count < water_col_margin_lower) ||
+                if (
+                    (col_count < water_col_margin_lower) ||
                     (col_count > water_col_margin_upper) ||
                     (row_count < water_row_margin_lower) ||
-                    (row_count > water_row_margin_upper)) {
+                    (row_count > water_row_margin_upper)
+                ) {
                     row.push(Water)
+                } else if (
+                    (col_count === water_col_margin_lower) ||
+                    (col_count === water_col_margin_upper) ||
+                    (row_count === water_row_margin_lower) ||
+                    (row_count === water_row_margin_upper)
+                ) {
+                    row.push(Beach)
                 } else {
                     row.push(Grass)
                 }

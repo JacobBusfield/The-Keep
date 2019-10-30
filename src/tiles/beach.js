@@ -1,8 +1,8 @@
 import Tile from './tile'
 
-export default class Water extends Tile {
+export default class Beach extends Tile {
     constructor(scene, x, y) {
-        super(scene, x, y, 'tile_water', 0)
+        super(scene, x, y, 'tile_beach', 0)
     }
 
     create() {}
