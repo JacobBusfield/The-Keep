@@ -1,18 +1,18 @@
 import Tile from './tile'
 
 export default class Wall extends Tile {
-    constructor(scene, x, y, isWallNE = false, isWallSE = false, isWallSW = false, isWallNW = false) {
-        super(scene, x, y, 'tile_wall_O', 0)
+    constructor(scene, x, y, width) {
+        super(scene, x, y, 'tile_wall_O', 0, width)
         this.updateNeighbours()
     }
 
     create() {}
 
-    update(){
+    update() {
         super.update()
     }
 
-    worldChange(neighbours){
+    worldChange(neighbours) {
         this.updateNeighbours(
             neighbours.NE instanceof Wall,
             neighbours.SE instanceof Wall,
@@ -21,13 +21,13 @@ export default class Wall extends Tile {
         )
     }
 
-    updateNeighbours(isWallNE = false, isWallSE = false, isWallSW = false, isWallNW = false){
+    updateNeighbours(isWallNE = false, isWallSE = false, isWallSW = false, isWallNW = false) {
         this.isWallNE = isWallNE
         this.isWallSE = isWallSE
         this.isWallSW = isWallSW
         this.isWallNW = isWallNW
 
-        if (!isWallNE && isWallSE && !isWallSW && isWallNW){
+        if (!isWallNE && isWallSE && !isWallSW && isWallNW) {
             super.setTexture('tile_wall_A');
         } else if (isWallNE && !isWallSE && isWallSW && !isWallNW) {
             super.setTexture('tile_wall_B');

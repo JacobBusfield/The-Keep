@@ -13,7 +13,7 @@ export default class Game extends Scene {
 
     preload() {}
 
-    create() {
+    create(data) {
         this.back_button = new TextButton(
             this,
             100,
@@ -26,7 +26,8 @@ export default class Game extends Scene {
         );
 
         this.tiles = new Tiles(this)
-        this.tiles.init(3)
+        this.tiles.init(data.level)
+        // this.tiles.init(4) // DEBUG
     }
 
     update(delta) {

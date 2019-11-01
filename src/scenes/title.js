@@ -18,15 +18,41 @@ export default class Title extends Scene {
             fill: "#fff"
         })
 
-        this.title_button = new TextButton(
+        this.title_button_small = new TextButton(
             this,
             100,
             200,
-            'Start Game', {
+            'Small', {
                 font: "bold 32px Arial",
                 fill: '#0f0'
             },
-            () => this.scene.start('game')
+            () => this.scene.start('game', {
+                level: 1
+            })
+        );
+        this.title_button_medium = new TextButton(
+            this,
+            300,
+            200,
+            'Medium', {
+                font: "bold 32px Arial",
+                fill: '#0f0'
+            },
+            () => this.scene.start('game', {
+                level: 2
+            })
+        );
+        this.title_button_big = new TextButton(
+            this,
+            500,
+            200,
+            'Large', {
+                font: "bold 32px Arial",
+                fill: '#0f0'
+            },
+            () => this.scene.start('game', {
+                level: 3
+            })
         );
     }
 }

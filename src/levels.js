@@ -13,13 +13,15 @@ export default class Levels {
         let tiles = []
         switch (no) {
             case 1:
-                tiles = [
-                    [Grass, Grass, Wall],
-                    [Grass, Grass, Wall],
-                    [Grass, Grass, Wall],
-                ]
+                tiles = this.generateRandom(8)
                 break;
             case 2:
+                tiles = this.generateRandom(14)
+                break;
+            case 3:
+                tiles = this.generateRandom(20)
+                break;
+            case 4:
                 tiles = [
                     [Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass],
                     [Grass, Grass, Grass, Wall, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass],
@@ -44,25 +46,25 @@ export default class Levels {
                 ]
                 break;
             default:
-                tiles = this.generateRandom()
+                tiles = this.generateRandom(20)
         }
 
         return tiles
     }
 
-    generateRandom() {
+    generateRandom(row_col_length) {
         let tiles = []
 
-        let water_row_margin_lower = Math.floor(Math.random() * 5) + 2
-        let water_row_margin_upper = 19 - water_row_margin_lower
-        let water_col_margin_lower = Math.floor(Math.random() * 5) + 2
-        let water_col_margin_upper = 19 - water_col_margin_lower
+        let water_row_margin_lower = Math.floor(Math.random() * (row_col_length / 4)) + 1
+        let water_row_margin_upper = (row_col_length - 1) - water_row_margin_lower
+        let water_col_margin_lower = Math.floor(Math.random() * (row_col_length / 4)) + 1
+        let water_col_margin_upper = (row_col_length - 1) - water_col_margin_lower
 
         let row_count = 0
         let col_count = 0
-        while (col_count < 20) {
+        while (col_count < row_col_length) {
             let row = []
-            while (row_count < 20) {
+            while (row_count < row_col_length) {
                 if (
                     (col_count < water_col_margin_lower) ||
                     (col_count > water_col_margin_upper) ||
