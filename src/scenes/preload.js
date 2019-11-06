@@ -9,6 +9,8 @@ export default class Preload extends Scene {
 
     preload() {
         // this.load.spritesheet('engineer', require('../assets/Engineer.png'), { frameWidth: 32, frameHeight: 32, endFrame: 16 });
+
+        // Tiles
         this.load.image('tile_grass', require('../assets/tiles/grass.png'));
         this.load.image('tile_beach', require('../assets/tiles/beach.png'));
         this.load.image('tile_water', require('../assets/tiles/water.png'));
@@ -24,6 +26,9 @@ export default class Preload extends Scene {
         this.load.image('tile_wall_I', require('../assets/tiles/wall_I.png'));
         this.load.image('tile_wall_J', require('../assets/tiles/wall_J.png'));
         this.load.image('tile_wall_X', require('../assets/tiles/wall_X.png'));
+
+        // Characters
+        this.load.image('character_man', require('../assets/characters/man.png'));
     }
 
     create() {

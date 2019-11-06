@@ -5,6 +5,7 @@ import {
     TextButton
 } from '../ui/button'
 import Tiles from '../tiles/tiles'
+import Allies from '../characters/allies'
 
 export default class Game extends Scene {
     constructor() {
@@ -27,6 +28,9 @@ export default class Game extends Scene {
 
         this.tiles = new Tiles(this)
         this.tiles.init(data.level)
+
+        this.allies = new Allies(this)
+        this.allies.init(this.tiles)
         // this.tiles.init(4) // DEBUG
     }
 
