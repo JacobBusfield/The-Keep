@@ -31,6 +31,11 @@ export default class Preload extends Scene {
             frameHeight: 34,
             endFrame: 8
         });
+        this.load.spritesheet('tops', require('../assets/characters/tops.png'), {
+            frameWidth: 32,
+            frameHeight: 34,
+            endFrame: 120
+        });
     }
 
     create() {
