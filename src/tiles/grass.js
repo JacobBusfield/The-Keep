@@ -5,9 +5,7 @@ export default class Grass extends Tile {
         super(scene, x, y, 'tile_grass', 0, width)
     }
 
-    create() {}
-
-    update() {
-        super.update()
+    worldChange(neighbours) {
+        super.worldChange()
     }
 }

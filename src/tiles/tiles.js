@@ -13,12 +13,6 @@ export default class Tiles extends GameObjects.Group {
         this.rowLength = 0
     }
 
-    update() {
-        this.getChildren().forEach(function (item) {
-            item.update()
-        }, this)
-    }
-
     init(level) {
         let tiles = this.levels.get(level)
 

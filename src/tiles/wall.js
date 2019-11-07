@@ -6,12 +6,6 @@ export default class Wall extends Tile {
         this.updateNeighbours()
     }
 
-    create() {}
-
-    update() {
-        super.update()
-    }
-
     worldChange(neighbours) {
         this.updateNeighbours(
             neighbours.NE instanceof Wall,
@@ -19,6 +13,7 @@ export default class Wall extends Tile {
             neighbours.SW instanceof Wall,
             neighbours.NW instanceof Wall,
         )
+        super.worldChange()
     }
 
     updateNeighbours(isWallNE = false, isWallSE = false, isWallSW = false, isWallNW = false) {

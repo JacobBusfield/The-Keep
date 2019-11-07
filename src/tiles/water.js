@@ -5,9 +5,7 @@ export default class Water extends Tile {
         super(scene, x, y, 'tile_water', 0, width)
     }
 
-    create() {}
-
-    update() {
-        super.update()
+    worldChange(neighbours) {
+        super.worldChange()
     }
 }

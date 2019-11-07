@@ -5,9 +5,7 @@ export default class Beach extends Tile {
         super(scene, x, y, 'tile_beach', 0, width)
     }
 
-    create() {}
-
-    update() {
-        super.update()
+    worldChange(neighbours) {
+        super.worldChange()
     }
 }

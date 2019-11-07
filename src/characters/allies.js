@@ -1,40 +1,29 @@
 import {
     GameObjects
 } from 'phaser'
-import AllyMan from './ally_man'
+import Ally from './ally'
 import Water from '../tiles/water'
 
-export default class Allies extends GameObjects.Group {
+export default class Allies extends GameObjects.Container {
     constructor(scene) {
         super(scene)
         this.tileWidth = 64
-    }
 
-    update() {
-        this.getChildren().forEach(function (item) {
-            item.update()
-        }, this)
+        this.scene.add.existing(this)
     }
 
     init(tiles) {
-        //TODO: switch player generation
-        //TODO: Nice to get that "round select an upgrade or new champion in"
-
         this.tileWidth = tiles.tileWidth
 
         for (let tile of tiles.children.entries) {
             if (!(tile instanceof Water)) {
-                this.spawn("man", tile.x, tile.y)
+                this.spawn(tile.x, tile.y)
                 break
             }
         }
     }
 
-    spawn(type, x, y) {
-        //TODO: switch on type.
-
-        let toAdd = new AllyMan(this.scene, x, y, this.tileWidth)
-        this.scene.add.existing(toAdd)
-        super.add(toAdd)
+    spawn(x, y) {
+        super.add(new Ally(this.scene, x, y, this.tileWidth))
     }
 }

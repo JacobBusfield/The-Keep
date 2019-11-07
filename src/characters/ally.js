@@ -1,15 +1,10 @@
 import Character from './character'
+import Body from './body'
 
 export default class Ally extends Character {
-    constructor(scene, x, y, texture, frame, width) {
-        super(scene, x, y, texture, frame, width)
-    }
+    constructor(scene, x, y, width) {
+        super(scene)
 
-    create() {
-        super.create()
-    }
-
-    update() {
-        super.update()
+        super.add(new Body(scene, x, y, Math.floor(Math.random() * 6), width))
     }
 }

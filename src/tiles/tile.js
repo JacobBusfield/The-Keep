@@ -20,10 +20,6 @@ export default class Tile extends GameObjects.Sprite {
             .on('pointerup', () => {})
     }
 
-    create() {}
-
-    update() {}
-
     worldChange(neighbours) {
         // lets state of a tile update using global tiles
     }

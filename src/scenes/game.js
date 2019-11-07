@@ -33,8 +33,4 @@ export default class Game extends Scene {
         this.allies.init(this.tiles)
         // this.tiles.init(4) // DEBUG
     }
-
-    update(delta) {
-        this.tiles.update()
-    }
 }
