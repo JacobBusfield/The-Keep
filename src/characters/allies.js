@@ -2,7 +2,7 @@ import {
     GameObjects
 } from 'phaser'
 import Ally from './ally'
-import Water from '../tiles/water'
+import Beach from '../tiles/beach'
 
 export default class Allies extends GameObjects.Container {
     constructor(scene) {
@@ -16,9 +16,8 @@ export default class Allies extends GameObjects.Container {
         this.tileWidth = tiles.tileWidth
 
         for (let tile of tiles.children.entries) {
-            if (!(tile instanceof Water)) {
+            if (tile instanceof Beach) {
                 this.spawn(tile.x, tile.y)
-                break
             }
         }
     }
