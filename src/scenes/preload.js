@@ -46,6 +46,11 @@ export default class Preload extends Scene {
             frameHeight: 34,
             endFrame: 72
         });
+        this.load.spritesheet('shields', require('../assets/characters/shields.png'), {
+            frameWidth: 32,
+            frameHeight: 34,
+            endFrame: 72
+        });
     }
 
     create() {
