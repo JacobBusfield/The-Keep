@@ -35,13 +35,15 @@ export default class Tiles extends GameObjects.Group {
             startX += this.tileWidth * 0.5
             startY += this.tileWidth * 0.29 // number is from ratio of tile face height to image height
         }
-        this.updateWorld()
     }
 
     // Go thru' tiles and update their appearance based on other tiles.
-    updateWorld() {
+    updateWorld(objects) {
         for (let i in this.children.entries) {
-            this.children.entries[i].worldChange(this.getNeighbourIndexes(parseInt(i)))
+            this.children.entries[i].worldChange(
+                this.getNeighbourIndexes(parseInt(i)),
+                objects.find(o => o.tile === this.children.entries[i])
+            )
         }
     }
 

@@ -17,12 +17,12 @@ export default class Allies extends GameObjects.Container {
 
         for (let tile of tiles.children.entries) {
             if (tile instanceof Beach) {
-                this.spawn(tile.x, tile.y)
+                this.spawn(tile)
             }
         }
     }
 
-    spawn(x, y) {
-        super.add(new Ally(this.scene, x, y, this.tileWidth))
+    spawn(tile) {
+        super.add(new Ally(this.scene, tile, this.tileWidth))
     }
 }

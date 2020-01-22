@@ -31,6 +31,11 @@ export default class Game extends Scene {
 
         this.allies = new Allies(this)
         this.allies.init(this.tiles)
-        // this.tiles.init(4) // DEBUG
+
+        this.tiles.updateWorld(this.getObjects())
+    }
+
+    getObjects() {
+        return this.allies.getAll()
     }
 }

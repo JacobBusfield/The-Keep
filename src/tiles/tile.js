@@ -12,15 +12,41 @@ export default class Tile extends GameObjects.Sprite {
                 Phaser.Geom.Polygon.Contains
             )
             .on('pointerover', () => {
-                this.setTint("0x555555")
+                this.pointerover()
             })
             .on('pointerout', () => {
-                this.clearTint()
+                this.pointerout()
             })
-            .on('pointerup', () => {})
+            .on('pointerup', () => {
+                this.pointerup()
+            })
+
+        this.object = null
+        this.scene = scene
     }
 
-    worldChange(neighbours) {
+    pointerover() {
+        this.setTint("0x555555")
+        if (this.object) {
+            console.log(this.object.name)
+        }
+    }
+    pointerout() {
+        this.clearTint()
+    }
+    pointerup() {
+        // TODO: started click response. needs finishing.
+
+        if (this.object) {
+            this.setTint("0x111111")
+            console.log("clicked: " + this.object.name)
+        } else {
+            console.log("clicked: NOTHING")
+        }
+    }
+
+    worldChange(neighbours, object) {
+        this.object = object
         // lets state of a tile update using global tiles
     }
 }
