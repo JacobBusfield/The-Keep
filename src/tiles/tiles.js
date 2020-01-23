@@ -13,7 +13,7 @@ export default class Tiles extends GameObjects.Group {
         this.rowLength = 0
     }
 
-    init(level) {
+    init(selection, level) {
         let tiles = this.levels.get(level)
 
         this.rowLength = tiles[0].length
@@ -26,7 +26,7 @@ export default class Tiles extends GameObjects.Group {
             let tileX = startX
             let tileY = startY
             for (let j = tiles[i].length - 1; j >= 0; j--) {
-                let toAdd = new tiles[i][j](this.scene, tileX, tileY, this.tileWidth)
+                let toAdd = new tiles[i][j](this.scene, selection, tileX, tileY, this.tileWidth)
                 this.scene.add.existing(toAdd)
                 super.add(toAdd)
                 tileX -= this.tileWidth * 0.5

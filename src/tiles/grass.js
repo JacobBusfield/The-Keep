@@ -1,8 +1,8 @@
 import Tile from './tile'
 
 export default class Grass extends Tile {
-    constructor(scene, x, y, width) {
-        super(scene, x, y, 'tile_grass', 0, width)
+    constructor(scene, selection, x, y, width) {
+        super(scene, selection, x, y, 'tile_grass', 0, width)
     }
 
     worldChange(neighbours, object) {

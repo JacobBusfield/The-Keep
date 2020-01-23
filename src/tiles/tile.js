@@ -3,9 +3,11 @@ import {
 } from 'phaser'
 
 export default class Tile extends GameObjects.Sprite {
-    constructor(scene, x, y, texture, frame, width) {
+    constructor(scene, selection, x, y, texture, frame, width) {
         super(scene, x, y, texture, frame)
 
+        this.selection = selection
+        this.overlayType = 'none'
         this.setScale(width / 64)
         this.setInteractive(
                 new Phaser.Geom.Polygon([0, 32, 32, 13, 64, 32, 32, 50, 0, 32]),
@@ -26,27 +28,44 @@ export default class Tile extends GameObjects.Sprite {
     }
 
     pointerover() {
-        this.setTint("0x555555")
+        this.setTint("0x999999")
         if (this.object) {
             console.log(this.object.name)
         }
     }
     pointerout() {
-        this.clearTint()
+        this.setOverlay()
     }
     pointerup() {
         // TODO: started click response. needs finishing.
 
         if (this.object) {
-            this.setTint("0x111111")
             console.log("clicked: " + this.object.name)
+            this.selection.select(this)
         } else {
             console.log("clicked: NOTHING")
+            this.selection.select(null)
         }
     }
 
     worldChange(neighbours, object) {
         this.object = object
         // lets state of a tile update using global tiles
+    }
+
+    overlay(type) {
+        this.overlayType = type
+        this.setOverlay()
+    }
+
+    setOverlay() {
+        switch (this.overlayType) {
+            case 'selection':
+                this.setTint("0x555555")
+                break
+            case 'none':
+            default:
+                this.clearTint()
+        }
     }
 }

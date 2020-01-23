@@ -6,6 +6,7 @@ import {
 } from '../ui/button'
 import Tiles from '../tiles/tiles'
 import Allies from '../characters/allies'
+import Selection from '../logic/selection'
 
 export default class Game extends Scene {
     constructor() {
@@ -27,7 +28,8 @@ export default class Game extends Scene {
         );
 
         this.tiles = new Tiles(this)
-        this.tiles.init(data.level)
+        this.selection = new Selection(this.tiles)
+        this.tiles.init(this.selection, data.level)
 
         this.allies = new Allies(this)
         this.allies.init(this.tiles)
